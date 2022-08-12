@@ -27,7 +27,7 @@ type GameConnection struct {
 var (
 	remoteHost    string
 	remotePort    string
-	listenPort    = "7777"
+	listenPort    = "5555"
 	listenAddress = "0.0.0.0"
 	useSocks      = false
 )
