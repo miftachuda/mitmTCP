@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 )
 
@@ -10,14 +9,8 @@ var (
 )
 
 func main() {
-	fmt.Println("Enter the IP of the remote host...")
-	var host string
-	fmt.Scanln(&host)
-	fmt.Println("Enter the port of the remote host...")
-	var port string
-	fmt.Scanln(&port)
-	remoteHost = host
-	remotePort = port
+	remoteHost = "127.0.0.1"
+	remotePort = "4444"
 	initConnections()
 
 }

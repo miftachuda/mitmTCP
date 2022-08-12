@@ -25,10 +25,11 @@ type GameConnection struct {
 }
 
 var (
-	remoteHost   string
-	remotePort   string
-	localAddress = "0.0.0.0"
-	useSocks     = false
+	remoteHost    string
+	remotePort    string
+	listenPort    = "7777"
+	listenAddress = "0.0.0.0"
+	useSocks      = false
 )
 
 //ConnectionLoop is the main loop for reading from the sockets
@@ -100,7 +101,7 @@ func (g *GameConnection) Send(c *bufio.ReadWriter, p *Packet) {
 }
 
 func InitListener(g *GameConnection) {
-	lstn, err := net.Listen("tcp", localAddress+":"+remotePort)
+	lstn, err := net.Listen("tcp", listenAddress+":"+listenPort)
 	if err != nil {
 		log.Println("Error starting listener:", err)
 	}
